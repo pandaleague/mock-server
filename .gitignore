@@ -1,0 +1,13 @@
+.idea
+composer.phar
+docker-compose.override.yml
+
+clover.xml
+coveralls-upload.json
+vendor/
+build/
+
+.phpunit.result.cache
+data/cache/config-cache.php
+*.sqlite
+docker-conf/mysql
