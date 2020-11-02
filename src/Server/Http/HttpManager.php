@@ -57,6 +57,11 @@ class HttpManager extends NoOpHttpServerController implements HttpServerInterfac
             $response = Message::parseResponse($expectation['response']);
             $this->getStorage()->expectationMatched((int)$expectation['id']);
             $this->log($request, $response, (int) $expectation['id']);
+
+            if (count($response->getHeader('X-Delay'))) {
+                sleep((int)$response->getHeader('X-Delay')[0]);
+            }
+
             $conn->send(Message::toString($response));
             $conn->close();
             return;

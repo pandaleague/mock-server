@@ -299,4 +299,29 @@ class DoctrineStorage implements Storage, ConnectionAware
             $this->connection->close();
         }
     }
+
+    public function loadStack(string $connectionId, ?string $method = null): array
+    {
+        $sql = $this->getConnection()->createQueryBuilder();
+        $sql = $sql->select(
+            'id',
+            'connection_id',
+            'method',
+            'request',
+            'response',
+            'expectation_id',
+            'date_stamp'
+        )
+            ->from('call_stack')
+            ->where('connection_id = :connection_id');
+
+        $data = ['connection_id' => $connectionId];
+
+        if (! is_null($method)) {
+            $sql->andWhere('method = :method');
+            $data['method'] = $method;
+        }
+
+        return $this->getConnection()->executeQuery($sql->getSQL(), $data)->fetchAllAssociative();
+    }
 }

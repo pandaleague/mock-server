@@ -64,4 +64,9 @@ class ServerMock extends Process
             $exactTimes
         );
     }
+
+    public function getServerId()
+    {
+        return $this->serverId;
+    }
 }

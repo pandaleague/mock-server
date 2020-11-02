@@ -70,4 +70,11 @@ interface Storage
      * @return mixed
      */
     public function clearAll();
+
+    /**
+     * @param string $connectionId
+     * @param string|null $method
+     * @return array
+     */
+    public function loadStack(string $connectionId, ?string $method = null): array;
 }
