@@ -51,6 +51,7 @@ try {
     $message = $stomp->read();
     $stomp->ack($message);
     print_r($message);
+    $stomp->send('my-queue', new \Stomp\Transport\Message(str_repeat('*', 15000).'1'));
 } catch (\Throwable $e) {
     echo $e->getMessage();
 } finally {

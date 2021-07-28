@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PandaLeague\\MockServer\\": "src"
+            "PandaLeague\\MockServer\\": "src/"
         }
     },
     "require": {

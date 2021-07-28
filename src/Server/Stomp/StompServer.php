@@ -40,6 +40,10 @@ class StompServer implements MessageComponentInterface
         $this->parser->addData($msg);
         $frame = $this->parser->nextFrame();
 
+        if ($frame === null) {
+            return;
+        }
+
         switch ($frame->getCommand()) {
             case 'CONNECT':
             case 'STOMP':
