@@ -3,6 +3,7 @@
 namespace PandaLeague\MockServer\Server;
 
 use PandaLeague\MockServer\Server\Http\HttpManager;
+use PandaLeague\MockServer\Server\Http\HttpServer;
 use PandaLeague\MockServer\Server\Stomp\StompManager;
 use PandaLeague\MockServer\Server\Stomp\StompMockManager;
 use PandaLeague\MockServer\Server\Stomp\StompServer;
@@ -24,6 +25,10 @@ class ServerFactory
                 $manager = new HttpManager($serverId);
                 $manager->setStorage($storage);
                 return new \Ratchet\Http\HttpServer($manager);
+            case \PandaLeague\MockServer\Server\Http\HttpServer::class:
+                $manager = new HttpManager($serverId);
+                $manager->setStorage($storage);
+                return new \PandaLeague\MockServer\Server\Http\HttpServer($manager);
         }
     }
 }
