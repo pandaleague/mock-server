@@ -15,12 +15,13 @@
         }
     },
     "require": {
-        "stomp-php/stomp-php": "^4.6",
+        "stomp-php/stomp-php": "^5.0",
         "cboden/ratchet": "^0.4.3",
         "symfony/process": "^5.1",
         "symfony/console": "^5.1",
         "doctrine/dbal": "^2.11",
-        "ramsey/uuid": "^3.9"
+        "ramsey/uuid": "^3.9",
+        "php": "^7.2||^8.0"
     },
     "require-dev": {
         "guzzlehttp/guzzle": "^7.2",
