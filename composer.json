@@ -19,7 +19,7 @@
         "cboden/ratchet": "^0.4.3",
         "symfony/process": "^5.1",
         "symfony/console": "^5.1",
-        "doctrine/dbal": "^2.11",
+        "doctrine/dbal": "^2.11|^3",
         "ramsey/uuid": "^3.9",
         "php": "^7.4||^8.0"
     },
