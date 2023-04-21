@@ -176,12 +176,8 @@ class DoctrineStorage implements Storage, ConnectionAware
      */
     public function expectationMatched(int $id)
     {
-        $sql = $this->getConnection()->createQueryBuilder();
-        $sql->update('expectations')
-            ->set('number_of_calls', 'number_of_calls + 1')
-            ->where('id = :id');
-
-        $this->getConnection()->executeQuery($sql->getSQL(), [':id' => $id]);
+        $query = "UPDATE expectations SET number_of_calls = number_of_calls + 1 WHERE id = $id";
+        $this->getConnection()->executeQuery($query);
     }
 
     /**

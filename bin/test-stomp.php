@@ -5,6 +5,9 @@ use PandaLeague\MockServer\Server\Stomp\StompServer;
 use PandaLeague\MockServer\ServerMock;
 use PandaLeague\MockServer\Storage\Doctrine\DoctrineStorage;
 
+// The package php-stomp/php-stomp is throwing Deprecated errors. No upgrade path yet
+error_reporting(E_ALL & ~E_DEPRECATED);
+
 require __DIR__.'/../vendor/autoload.php';
 
 // Storage that we can use cross processes

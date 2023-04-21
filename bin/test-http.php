@@ -36,7 +36,7 @@ $httpMock->expectsHttp('POST', $response, $request2);
 // Set some expectations on the HTTP server:
 // The request must be matched exactly - empty body will match all, empty headers will match all
 $request3 = new \GuzzleHttp\Psr7\Request('POST', '/my-post-url', [], '');
-$response = new \GuzzleHttp\Psr7\Response(200, ['X-My-header' => 'test-header', 'X-Delay' => 10], 'URL Match');
+$response = new \GuzzleHttp\Psr7\Response(200, ['X-My-header' => 'test-header'], 'URL Match');
 $httpMock->expectsHttp('POST', $response, $request3, 1);
 
 // Start the Stomp Server (expectations can still be added after the start)

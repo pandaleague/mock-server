@@ -1,6 +1,7 @@
 .idea
 composer.phar
 docker-compose.override.yml
+composer.lock
 
 clover.xml
 coveralls-upload.json
