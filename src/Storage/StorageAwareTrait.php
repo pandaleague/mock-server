@@ -4,13 +4,13 @@ namespace PandaLeague\MockServer\Storage;
 
 trait StorageAwareTrait
 {
-    /** @var Storage */
+    /** @var ?Storage */
     private $storage;
 
     /**
      * @param Storage $storage
      */
-    public function setStorage(Storage $storage)
+    public function setStorage(Storage $storage): void
     {
         $this->storage = $storage;
     }
